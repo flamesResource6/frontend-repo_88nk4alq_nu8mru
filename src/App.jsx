@@ -38,11 +38,23 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-white">
+    <div className="relative min-h-screen bg-noise">
+      {/* Large hero at top */}
       <Hero onSeed={seedDemo} loadingSeed={loadingSeed} />
+
+      {/* Curvy divider */}
+      <div className="relative -mt-6">
+        <svg className="w-full h-12 text-white" viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path fill="currentColor" d="M0,64L80,58.7C160,53,320,43,480,48C640,53,800,75,960,80C1120,85,1280,75,1360,69.3L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z" />
+        </svg>
+      </div>
+
+      {/* Content sections */}
       <Results results={results} />
       <Players players={players} />
-      <footer className="mx-auto max-w-6xl px-6 py-10 text-sm text-gray-500">
+
+      {/* Footer */}
+      <footer className="mx-auto max-w-6xl px-6 py-14 text-sm text-gray-600">
         © {new Date().getFullYear()} TSV Eisenberg – Arrogante Hustensafttruppe. Alle Rechte vorbehalten.
       </footer>
     </div>

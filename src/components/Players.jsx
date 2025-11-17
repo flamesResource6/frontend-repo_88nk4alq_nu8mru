@@ -1,6 +1,8 @@
+import { Users } from 'lucide-react'
+
 function PlayerCard({ p }) {
   return (
-    <div className="p-5 rounded-xl border bg-white shadow-sm hover:shadow-md transition">
+    <div className="hover-tilt p-5 rounded-2xl border bg-white shadow-sm hover:shadow-xl transition">
       <div className="flex items-center gap-4">
         <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold">
           {p.nickname?.[0] || p.name[0]}
@@ -34,11 +36,17 @@ function PlayerCard({ p }) {
 
 function Players({ players }) {
   return (
-    <section id="players" className="mx-auto max-w-6xl px-6 py-12">
-      <h2 className="text-2xl sm:text-3xl font-bold">Spieler-Stats</h2>
+    <section id="players" className="relative mx-auto max-w-6xl px-6 py-16">
+      <div className="absolute inset-x-0 -z-10 top-0 h-32 bg-gradient-to-b from-emerald-200/60 to-transparent" />
+      <div className="flex items-center gap-2">
+        <Users className="w-5 h-5 text-emerald-700" />
+        <h2 className="text-2xl sm:text-3xl font-bold">Spieler-Stats</h2>
+      </div>
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {players.length === 0 ? (
-          <div className="col-span-full text-gray-500">Noch keine Spieler erfasst.</div>
+          <div className="col-span-full text-gray-600 bg-white/60 border border-emerald-200 rounded-xl p-6">
+            Noch keine Spieler erfasst.
+          </div>
         ) : (
           players.map(p => <PlayerCard key={p._id} p={p} />)
         )}
