@@ -1,4 +1,4 @@
-import { Trophy, BowlingBall, ArrowRight } from 'lucide-react'
+import { Trophy, Target, ArrowRight } from 'lucide-react'
 
 function Hero({ onSeed, loadingSeed }) {
   return (
@@ -9,7 +9,7 @@ function Hero({ onSeed, loadingSeed }) {
       </div>
       <div className="mx-auto max-w-6xl px-6 py-16 sm:py-24 relative">
         <div className="flex items-center gap-3 mb-4">
-          <BowlingBall className="w-6 h-6" />
+          <Target className="w-6 h-6" />
           <span className="uppercase tracking-widest text-white/90 text-xs">Nine-pin Bowling • Thüringen</span>
         </div>
         <h1 className="text-4xl sm:text-6xl font-extrabold leading-tight">
